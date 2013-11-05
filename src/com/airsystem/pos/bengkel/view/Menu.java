@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JMenuItem;
 
 import org.jdesktop.layout.GroupLayout;
 import org.jdesktop.layout.LayoutStyle;
@@ -22,10 +23,16 @@ import com.airsystem.pos.bengkel.controller.MenuController;
  * @author Budi Oktaviyan
  */
 public class Menu extends MenuController {
-
+	
+	private final Font VERDANA_MENU;
+	private final Font VERDANA_ITEM;
+	
 	public Menu() {
 		super();
-
+		
+		VERDANA_MENU = new Font("Verdana", 1, 14);
+		VERDANA_ITEM = new Font("Verdana", 0, 14);
+		
 		this.setIconImage(new ImageIcon(getClass().getResource("../res/logo.png")).getImage());
 		initComponents();
 		timer();
@@ -49,8 +56,7 @@ public class Menu extends MenuController {
 		systemMenu.setFont(new Font("Verdana", 1, 14));
 		systemMenu.setText("Sistem");
 
-		masterMenu.setFont(new Font("Verdana", 1, 14));
-		masterMenu.setText("Data");
+		initMasterMenu();
 
 		transactionMenu.setFont(new Font("Verdana", 1, 14));
 		transactionMenu.setText("Transaksi");
@@ -85,102 +91,12 @@ public class Menu extends MenuController {
 			}
 		});
 
-		itemEmployee.setIcon(new ImageIcon(getClass().getResource("../res/user.png")));
-		itemEmployee.setFont(new Font("Verdana", 0, 14));
-		itemEmployee.setText("Data Karyawan");
-
-		itemEmployee.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				openMasterEmployee(evt);
-			}
-		});
-
-		itemBilling.setIcon(new ImageIcon(getClass().getResource("../res/wallet.png")));
-		itemBilling.setFont(new Font("Verdana", 0, 14));
-		itemBilling.setText("Data Tagihan");
-
-		itemBilling.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				openMasterBilling(evt);
-			}
-		});
-
-		itemVehicle.setIcon(new ImageIcon(getClass().getResource("../res/vehicle.png")));
-		itemVehicle.setFont(new Font("Verdana", 0, 14));
-		itemVehicle.setText("Data Kendaraan");
-
-		itemVehicle.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				openMasterVehicle(evt);
-			}
-		});
-
-		itemCustomer.setIcon(new ImageIcon(getClass().getResource("../res/customer.png")));
-		itemCustomer.setFont(new Font("Verdana", 0, 14));
-		itemCustomer.setText("Data Pelanggan");
-
-		itemCustomer.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				openMasterCustomer(evt);
-			}
-		});
-
-		itemSparepart.setIcon(new ImageIcon(getClass().getResource("../res/sparepart.png")));
-		itemSparepart.setFont(new Font("Verdana", 0, 14));
-		itemSparepart.setText("Data Sparepart");
-
-		itemSparepart.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				openMasterSparepart(evt);
-			}
-		});
-
-		itemJasa.setIcon(new ImageIcon(getClass().getResource("../res/jasa.png")));
-		itemJasa.setFont(new Font("Verdana", 0, 14));
-		itemJasa.setText("Data Jenis Service");
-
-		itemJasa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				openMasterJasa(evt);
-			}
-		});
-
-		itemSparepartOrder.setIcon(new ImageIcon(getClass().getResource("../res/sparepart.png")));
-		itemSparepartOrder.setFont(new Font("Verdana", 0, 14));
-		itemSparepartOrder.setText("Pesan Sparepart");
-
-		itemSparepartOrder.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				openSparepartOrder(evt);
-			}
-		});
-
-		itemJasaOrder.setIcon(new ImageIcon(getClass().getResource("../res/jasa.png")));
-		itemJasaOrder.setFont(new Font("Verdana", 0, 14));
-		itemJasaOrder.setText("Jasa Service");
-
-		itemJasaOrder.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				openJasaOrder(evt);
-			}
-		});
-
 		timeLabel.setFont(new Font("Verdana", 1, 12));
 
 		systemMenu.add(itemUserManagement);
 		systemMenu.add(itemChangePassword);
 		systemMenu.add(systemSeparator);
 		systemMenu.add(itemLogout);
-
-		masterMenu.add(itemEmployee);
-		masterMenu.add(itemBilling);
-		masterMenu.add(itemVehicle);
-		masterMenu.add(itemCustomer);
-		masterMenu.add(itemSparepart);
-		masterMenu.add(itemJasa);
-
-		transactionMenu.add(itemSparepartOrder);
-		transactionMenu.add(itemJasaOrder);
 
 		menuBar.add(systemMenu);
 		menuBar.add(masterMenu);
@@ -200,4 +116,25 @@ public class Menu extends MenuController {
 		setSize(screenSize.width, screenSize.height);
 		setLocationRelativeTo(this);
 	}
+	
+	/**
+	 * Initialize Master menu button.
+	 */
+	private void initMasterMenu() {
+		masterMenu.setFont(VERDANA_MENU);
+		masterMenu.setText("Data");
+		
+		itemVehicleData.setIcon(new ImageIcon(getClass().getResource("../res/vehicle.png")));
+		itemVehicleData.setFont(VERDANA_ITEM);
+		itemVehicleData.setText("Data Karyawan");
+		
+		itemVehicleData.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				openVehicleData(evt);
+			}
+		});
+		
+		masterMenu.add(itemVehicleData);
+	}
+	
 }

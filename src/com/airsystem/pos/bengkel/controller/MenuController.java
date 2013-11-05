@@ -19,6 +19,7 @@ import com.airsystem.pos.bengkel.model.MenuModel;
 import com.airsystem.pos.bengkel.view.ChangePassword;
 import com.airsystem.pos.bengkel.view.Login;
 import com.airsystem.pos.bengkel.view.UserManagement;
+import com.airsystem.pos.bengkel.view.VehicleDataView;
 
 /**
  * @author Budi Oktaviyan
@@ -49,7 +50,6 @@ public class MenuController extends MenuModel implements IMenu {
 	public void setup(boolean authority) {
 		itemUserManagement.setVisible(authority);
 		itemChangePassword.setVisible(!authority);
-		masterMenu.setVisible(authority);
 	}
 
 	public void timer() {
@@ -183,39 +183,33 @@ public class MenuController extends MenuModel implements IMenu {
 			}
 		}
 	}
-
-	public void openMasterEmployee(ActionEvent evt) {
-		// TODO Implement later
+	
+	/**
+	 * Data Kendaraan menu button clicked action. 
+	 */
+	public void openVehicleData(ActionEvent evt) {
+		if(!desktopPane.isAncestorOf(formVehicleData) ) {
+			formVehicleData = new VehicleDataView(this);
+			desktopPane.add(formVehicleData);
+			
+			try {
+				formVehicleData.setVisible(true);
+				formVehicleData.setSelected(true);
+			} catch (Exception e) {
+				LOG.error(e.getMessage(), e);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+			}
+		}
+		else {
+			try {
+				formVehicleData.setSelected(true);
+			} catch (Exception e) {
+				LOG.error(e.getMessage(), e);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+			}
+		}
 	}
-
-	public void openMasterBilling(ActionEvent evt) {
-		// TODO Implement later
-	}
-
-	public void openMasterVehicle(ActionEvent evt) {
-		// TODO Implement later
-	}
-
-	public void openMasterCustomer(ActionEvent evt) {
-		// TODO Implement later
-	}
-
-	public void openMasterSparepart(ActionEvent evt) {
-		// TODO Implement later
-	}
-
-	public void openMasterJasa(ActionEvent evt) {
-		// TODO Implement later
-	}
-
-	public void openSparepartOrder(ActionEvent evt) {
-		// TODO Implement later
-	}
-
-	public void openJasaOrder(ActionEvent evt) {
-		// TODO Implement later
-	}
-
+	
 	private boolean askExit() {
 		try {
 			Object[] objects = { "Ya", "Tidak" };
