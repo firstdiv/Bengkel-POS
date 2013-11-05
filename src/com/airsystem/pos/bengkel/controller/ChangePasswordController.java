@@ -50,28 +50,28 @@ public class ChangePasswordController extends ChangePasswordModel implements IPa
 			get();
 
 			if (olduserPass.isEmpty() || newuserPass.isEmpty() || idLogin.isEmpty()) {
-				JOptionPane.showMessageDialog(ChangePasswordController.this, "Data kosong!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(ChangePasswordController.this, "Data kosong!", "Pesan", JOptionPane.WARNING_MESSAGE);
 			} else if (olduserPass.equalsIgnoreCase(newuserPass)) {
-				JOptionPane.showMessageDialog(ChangePasswordController.this, "Password lama dan baru tidak boleh sama!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(ChangePasswordController.this, "Password lama dan baru\ntidak boleh sama!", "Pesan", JOptionPane.WARNING_MESSAGE);
 				reset();
 			} else if (!olduserPass.equalsIgnoreCase(Login.getPasswordLogin())) {
-				JOptionPane.showMessageDialog(ChangePasswordController.this, "Password lama tidak cocok!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(ChangePasswordController.this, "Password lama tidak cocok!", "Pesan", JOptionPane.WARNING_MESSAGE);
 				reset();
 			} else {
 				User user = new User();
 				userServices.change(user, Integer.parseInt(idLogin), newuserPass);
 
-				JOptionPane.showMessageDialog(ChangePasswordController.this, "Ganti password sukses", "Pesan Sistem", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(ChangePasswordController.this, "Ganti password sukses", "Pesan", JOptionPane.INFORMATION_MESSAGE);
 				logout();
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
-			JOptionPane.showMessageDialog(ChangePasswordController.this, "Ganti password gagal!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(ChangePasswordController.this, "Ganti password gagal!", "Pesan", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
 	public void logout() {
 		dispose();
-		JOptionPane.showMessageDialog(ChangePasswordController.this, "Silahkan logout dan login kembali", "Pesan Sistem", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(ChangePasswordController.this, "Silahkan logout dan\nlogin kembali", "Pesan", JOptionPane.INFORMATION_MESSAGE);
 	}
 }

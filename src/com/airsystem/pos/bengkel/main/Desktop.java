@@ -31,7 +31,7 @@ public class Desktop {
 					}
 				} catch (Exception e) {
 					LOG.error(e.getMessage(), e);
-					JOptionPane.showMessageDialog(null, "Database belum terkoneksi!", "Database Status: Disconnect", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Database belum terkoneksi!", "Pesan", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});

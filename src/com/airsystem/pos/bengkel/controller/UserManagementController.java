@@ -86,9 +86,9 @@ public class UserManagementController extends UserManagementModel implements IMa
 
 			if (nama.isEmpty() || role.equalsIgnoreCase("-- PILIH --") || username.isEmpty()
 			||  userPassword.isEmpty() || confirmuserPassword.isEmpty()) {
-				JOptionPane.showMessageDialog(UserManagementController.this, "Data kosong!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(UserManagementController.this, "Data kosong!", "Pesan", JOptionPane.WARNING_MESSAGE);
 			} else if (!userPassword.equalsIgnoreCase(confirmuserPassword)) {
-				JOptionPane.showMessageDialog(UserManagementController.this, "Konfirmasi password tidak sama!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(UserManagementController.this, "Konfirmasi password tidak sama!", "Pesan", JOptionPane.WARNING_MESSAGE);
 			} else {
 				User user = new User();
 				user.setNama(nama);
@@ -101,12 +101,12 @@ public class UserManagementController extends UserManagementModel implements IMa
 
 				userServices.saveOrUpdate(user, roles);
 
-				JOptionPane.showMessageDialog(UserManagementController.this, "Data berhasil disimpan", "Pesan Sistem", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(UserManagementController.this, "Simpan data sukses", "Pesan", JOptionPane.INFORMATION_MESSAGE);
 				reset();
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
-			JOptionPane.showMessageDialog(UserManagementController.this, "Simpan data gagal!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(UserManagementController.this, "Simpan data gagal!", "Pesan", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -116,9 +116,9 @@ public class UserManagementController extends UserManagementModel implements IMa
 
 			if (nama.isEmpty() || role.equalsIgnoreCase("-- PILIH --") || username.isEmpty()
 			||  userPassword.isEmpty() || confirmuserPassword.isEmpty() || id.isEmpty()) {
-				JOptionPane.showMessageDialog(UserManagementController.this, "Data kosong!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(UserManagementController.this, "Data kosong!", "Pesan", JOptionPane.WARNING_MESSAGE);
 			} else if (!userPassword.equalsIgnoreCase(confirmuserPassword)) {
-				JOptionPane.showMessageDialog(UserManagementController.this, "Konfirmasi password tidak sama!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(UserManagementController.this, "Konfirmasi password tidak sama!", "Pesan", JOptionPane.WARNING_MESSAGE);
 			} else {
 				User user = new User();
 				user.setId(Integer.parseInt(id));
@@ -133,12 +133,12 @@ public class UserManagementController extends UserManagementModel implements IMa
 
 				userServices.saveOrUpdate(user, roles);
 
-				JOptionPane.showMessageDialog(UserManagementController.this, "Data telah dirubah", "Pesan Sistem", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(UserManagementController.this, "Ubah data sukses", "Pesan", JOptionPane.INFORMATION_MESSAGE);
 				cancel();
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
-			JOptionPane.showMessageDialog(UserManagementController.this, "Ubah data gagal!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(UserManagementController.this, "Ubah data gagal!", "Pesan", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -147,7 +147,7 @@ public class UserManagementController extends UserManagementModel implements IMa
 			get();
 
 			if (nama.isEmpty() || role.equalsIgnoreCase("-- PILIH --") || username.isEmpty() || id.isEmpty()) {
-				JOptionPane.showMessageDialog(UserManagementController.this, "Data kosong!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(UserManagementController.this, "Data kosong!", "Pesan", JOptionPane.WARNING_MESSAGE);
 			} else {
 				User user = new User();
 				user.setId(Integer.parseInt(id));
@@ -161,12 +161,12 @@ public class UserManagementController extends UserManagementModel implements IMa
 
 				userServices.delete(roles, user);
 
-				JOptionPane.showMessageDialog(UserManagementController.this, "Data berhasil dihapus", "Pesan Sistem", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(UserManagementController.this, "Hapus data sukses", "Pesan", JOptionPane.INFORMATION_MESSAGE);
 				cancel();
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
-			JOptionPane.showMessageDialog(UserManagementController.this, "Hapus data gagal!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(UserManagementController.this, "Hapus data gagal!", "Pesan", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 

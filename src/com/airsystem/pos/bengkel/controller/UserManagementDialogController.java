@@ -61,7 +61,7 @@ public class UserManagementDialogController extends UserManagementDialogModel im
 		} catch (Exception e) {
 			this.setVisible(false);
 			LOG.error(e.getMessage(), e);
-			JOptionPane.showMessageDialog(UserManagementDialogController.this, "Data tidak dapat di load!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(UserManagementDialogController.this, "Load data gagal!", "Pesan", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -78,7 +78,7 @@ public class UserManagementDialogController extends UserManagementDialogModel im
 
 	public void search() {
 		if (searchCombo.getSelectedIndex() == 0 || searchField.getText().isEmpty()) {
-			JOptionPane.showMessageDialog(UserManagementDialogController.this, "Silahkan pilih data!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(UserManagementDialogController.this, "Silahkan pilih data!", "Pesan", JOptionPane.WARNING_MESSAGE);
 			reset();
 		} else {
 			try {
@@ -98,7 +98,7 @@ public class UserManagementDialogController extends UserManagementDialogModel im
 				tableData.setModel(tableModel);
 			} catch (Exception e) {
 				LOG.error(e.getMessage(), e);
-				JOptionPane.showMessageDialog(UserManagementDialogController.this, "Data tidak dapat di load!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(UserManagementDialogController.this, "Load data gagal!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 	}

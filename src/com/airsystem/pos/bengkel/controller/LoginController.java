@@ -47,7 +47,7 @@ public class LoginController extends LoginModel implements ILogin, ISystem {
 			get();
 
 			if (userName.isEmpty() || userPassword.isEmpty()) {
-				JOptionPane.showMessageDialog(LoginController.this, "Username/Password kosong!", "Pesan Sistem", JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(LoginController.this, "Username/Password kosong!", "Pesan", JOptionPane.WARNING_MESSAGE);
 			} else {
 				List<User> users = userServices.login(userName, userPassword);
 
@@ -59,13 +59,13 @@ public class LoginController extends LoginModel implements ILogin, ISystem {
 
 					load();
 				} else {
-					JOptionPane.showMessageDialog(LoginController.this, "Username/Password salah!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(LoginController.this, "Username/Password salah!", "Pesan", JOptionPane.ERROR_MESSAGE);
 					reset();
 				}
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
-			JOptionPane.showMessageDialog(LoginController.this, "Database belum terkoneksi!", "Database Status: Disconnect", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(LoginController.this, "Database belum terkoneksi!", "Pesan", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 

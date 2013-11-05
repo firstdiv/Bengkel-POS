@@ -149,14 +149,14 @@ public class MenuController extends MenuModel implements IMenu {
 				formUserManagement.setSelected(true);
 			} catch (Exception e) {
 				LOG.error(e.getMessage(), e);
-				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			}
 		} else {
 			try {
 				formUserManagement.setSelected(true);
 			} catch (Exception e) {
 				LOG.error(e.getMessage(), e);
-				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 	}
@@ -171,14 +171,14 @@ public class MenuController extends MenuModel implements IMenu {
 				formChangePassword.setSelected(true);
 			} catch (Exception e) {
 				LOG.error(e.getMessage(), e);
-				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			}
 		} else {
 			try {
 				formChangePassword.setSelected(true);
 			} catch (Exception e) {
 				LOG.error(e.getMessage(), e);
-				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 	}
@@ -186,7 +186,7 @@ public class MenuController extends MenuModel implements IMenu {
 	private boolean askExit() {
 		try {
 			Object[] objects = { "Ya", "Tidak" };
-			int ask = JOptionPane.showOptionDialog(MenuController.this, "Apakah Anda yakin ingin keluar dari aplikasi?", "Konfirmasi",
+			int ask = JOptionPane.showOptionDialog(MenuController.this, "Keluar dari aplikasi?", "Konfirmasi",
 					  JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, objects, objects[0]);
 
 			if (ask == 0) {
@@ -205,7 +205,7 @@ public class MenuController extends MenuModel implements IMenu {
 		if (internalFrame.length > 0) {
 			isFormOpen = true;
 
-			JOptionPane.showMessageDialog(MenuController.this, "Silahkan tutup semua form terlebih dahulu!", "Form Status: Open", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(MenuController.this, "Form masih terbuka!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			this.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 		} else if (internalFrame.length == 0) {
 			isFormOpen = false;
