@@ -20,6 +20,6 @@
 		<mapping class="com.airsystem.pos.bengkel.entity.User"></mapping>
 		<mapping class="com.airsystem.pos.bengkel.entity.Role"></mapping>
 		<mapping class="com.airsystem.pos.bengkel.entity.Karyawan"></mapping>
-		<mapping class="com.airsystem.pos.bengkel.entity.Vehicle"></mapping>
+		<mapping class="com.airsystem.pos.bengkel.entity.Kendaraan"></mapping>
 	</session-factory>
 </hibernate-configuration>

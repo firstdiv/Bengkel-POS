@@ -31,23 +31,23 @@ public class MenuModel extends JFrame {
 	protected JMenuItem itemLogout = new JMenuItem();
 	protected JMenuItem itemEmployee = new JMenuItem();
 	protected JMenuItem itemBilling = new JMenuItem();
+	protected JMenuItem itemVehicle = new JMenuItem();
 	protected JMenuItem itemCustomer = new JMenuItem();
 	protected JMenuItem itemSparepart = new JMenuItem();
 	protected JMenuItem itemJasa = new JMenuItem();
 	protected JMenuItem itemSparepartOrder = new JMenuItem();
 	protected JMenuItem itemJasaOrder = new JMenuItem();
-	protected final JMenuItem itemVehicleData = new JMenuItem();
 
 	protected JInternalFrame formUserManagement = new JInternalFrame();
 	protected JInternalFrame formChangePassword = new JInternalFrame();
 	protected JInternalFrame formMasterEmployee = new JInternalFrame();
 	protected JInternalFrame formMasterBilling = new JInternalFrame();
+	protected JInternalFrame formMasterVehicle = new JInternalFrame();
 	protected JInternalFrame formMasterCustomer = new JInternalFrame();
 	protected JInternalFrame formMasterSparepart = new JInternalFrame();
 	protected JInternalFrame formMasterJasa = new JInternalFrame();
 	protected JInternalFrame formSparepartOrder = new JInternalFrame();
 	protected JInternalFrame formJasaOrder = new JInternalFrame();
-	protected JInternalFrame formVehicleData = new JInternalFrame();
 
 	protected JLabel timeLabel = new JLabel();
 

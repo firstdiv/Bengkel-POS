@@ -14,7 +14,7 @@ import com.airsystem.pos.bengkel.view.MasterEmployeeDialog;
 public class MasterEmployeeController extends MasterEmployeeModel implements IMaster {
 	private static final Logger LOG = Logger.getLogger(MasterEmployeeController.class.getSimpleName());
 
-	// FIXME Implement this later
+	// FIXME Implement later
 	// private String nama, gaji, uangMakan, id;
 
 	// private KaryawanServices karyawanServices = new KaryawanServices();
@@ -34,10 +34,10 @@ public class MasterEmployeeController extends MasterEmployeeModel implements IMa
 	}
 
 	public void get() {
-//		nama = namaField.getText();
-//		gaji = gajiField.getText();
-//		uangMakan = uangmakanField.getText();
-//		id = idField.getText();
+		// nama = namaField.getText();
+		// gaji = gajiField.getText();
+		// uangMakan = uangmakanField.getText();
+		// id = idField.getText();
 	}
 
 	public void reset() {

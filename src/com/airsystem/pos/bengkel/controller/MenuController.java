@@ -19,8 +19,8 @@ import com.airsystem.pos.bengkel.model.MenuModel;
 import com.airsystem.pos.bengkel.view.ChangePassword;
 import com.airsystem.pos.bengkel.view.Login;
 import com.airsystem.pos.bengkel.view.MasterEmployee;
+import com.airsystem.pos.bengkel.view.MasterVehicle;
 import com.airsystem.pos.bengkel.view.UserManagement;
-import com.airsystem.pos.bengkel.view.VehicleDataView;
 
 /**
  * @author Budi Oktaviyan
@@ -212,28 +212,24 @@ public class MenuController extends MenuModel implements IMenu {
 		// TODO Implement later
 	}
 
-	/**
-	 * Data Kendaraan menu button clicked action. 
-	 */
-	public void openVehicleData(ActionEvent evt) {
-		if(!desktopPane.isAncestorOf(formVehicleData) ) {
-			formVehicleData = new VehicleDataView(this);
-			desktopPane.add(formVehicleData);
-			
+	public void openMasterVehicle(ActionEvent evt) {
+		if (!desktopPane.isAncestorOf(formMasterVehicle)) {
+			formMasterVehicle = new MasterVehicle(this);
+			desktopPane.add(formMasterVehicle);
+
 			try {
-				formVehicleData.setVisible(true);
-				formVehicleData.setSelected(true);
+				formMasterVehicle.setVisible(true);
+				formMasterVehicle.setSelected(true);
 			} catch (Exception e) {
 				LOG.error(e.getMessage(), e);
-				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			}
-		}
-		else {
+		} else {
 			try {
-				formVehicleData.setSelected(true);
+				formMasterVehicle.setSelected(true);
 			} catch (Exception e) {
 				LOG.error(e.getMessage(), e);
-				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan Sistem", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			}
 		}
 	}

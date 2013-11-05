@@ -23,15 +23,9 @@ import com.airsystem.pos.bengkel.controller.MenuController;
  */
 public class Menu extends MenuController {
 
-	private final Font VERDANA_MENU;
-	private final Font VERDANA_ITEM;
-	
 	public Menu() {
 		super();
 
-		VERDANA_MENU = new Font("Verdana", 1, 14);
-		VERDANA_ITEM = new Font("Verdana", 0, 14);
-		
 		this.setIconImage(new ImageIcon(getClass().getResource("../res/logo.png")).getImage());
 		initComponents();
 		timer();
@@ -54,8 +48,6 @@ public class Menu extends MenuController {
 
 		systemMenu.setFont(new Font("Verdana", 1, 14));
 		systemMenu.setText("Sistem");
-
-		initMasterMenu();
 
 		masterMenu.setFont(new Font("Verdana", 1, 14));
 		masterMenu.setText("Data");
@@ -110,6 +102,16 @@ public class Menu extends MenuController {
 		itemBilling.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				openMasterBilling(evt);
+			}
+		});
+
+		itemVehicle.setIcon(new ImageIcon(getClass().getResource("../res/vehicle.png")));
+		itemVehicle.setFont(new Font("Verdana", 0, 14));
+		itemVehicle.setText("Data Kendaraan");
+
+		itemVehicle.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				openMasterVehicle(evt);
 			}
 		});
 
@@ -172,6 +174,7 @@ public class Menu extends MenuController {
 
 		masterMenu.add(itemEmployee);
 		masterMenu.add(itemBilling);
+		masterMenu.add(itemVehicle);
 		masterMenu.add(itemCustomer);
 		masterMenu.add(itemSparepart);
 		masterMenu.add(itemJasa);
@@ -197,25 +200,4 @@ public class Menu extends MenuController {
 		setSize(screenSize.width, screenSize.height);
 		setLocationRelativeTo(this);
 	}
-	
-	/**
-	 * Initialize Master menu button.
-	 */
-	private void initMasterMenu() {
-		masterMenu.setFont(VERDANA_MENU);
-		masterMenu.setText("Data");
-		
-		itemVehicleData.setIcon(new ImageIcon(getClass().getResource("../res/vehicle.png")));
-		itemVehicleData.setFont(VERDANA_ITEM);
-		itemVehicleData.setText("Data Karyawan");
-		
-		itemVehicleData.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent evt) {
-				openVehicleData(evt);
-			}
-		});
-		
-		masterMenu.add(itemVehicleData);
-	}
-	
 }
