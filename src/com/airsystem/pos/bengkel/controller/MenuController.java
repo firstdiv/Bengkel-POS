@@ -19,7 +19,6 @@ import com.airsystem.pos.bengkel.model.MenuModel;
 import com.airsystem.pos.bengkel.view.ChangePassword;
 import com.airsystem.pos.bengkel.view.Login;
 import com.airsystem.pos.bengkel.view.MasterEmployee;
-import com.airsystem.pos.bengkel.view.MasterVehicle;
 import com.airsystem.pos.bengkel.view.UserManagement;
 
 /**
@@ -213,25 +212,7 @@ public class MenuController extends MenuModel implements IMenu {
 	}
 
 	public void openMasterVehicle(ActionEvent evt) {
-		if (!desktopPane.isAncestorOf(formMasterVehicle)) {
-			formMasterVehicle = new MasterVehicle(this);
-			desktopPane.add(formMasterVehicle);
-
-			try {
-				formMasterVehicle.setVisible(true);
-				formMasterVehicle.setSelected(true);
-			} catch (Exception e) {
-				LOG.error(e.getMessage(), e);
-				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
-			}
-		} else {
-			try {
-				formMasterVehicle.setSelected(true);
-			} catch (Exception e) {
-				LOG.error(e.getMessage(), e);
-				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
-			}
-		}
+		// TODO Implement later
 	}
 
 	public void openMasterCustomer(ActionEvent evt) {
