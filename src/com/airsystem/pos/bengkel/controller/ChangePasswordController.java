@@ -41,10 +41,6 @@ public class ChangePasswordController extends ChangePasswordModel implements IPa
 		newpasswordField.setText("");
 	}
 
-	public void load() {
-		idLogin = Login.getIdLogin();
-	}
-
 	public void change(ActionEvent evt) {
 		try {
 			get();
@@ -61,8 +57,8 @@ public class ChangePasswordController extends ChangePasswordModel implements IPa
 				User user = new User();
 				userServices.change(user, Integer.parseInt(idLogin), newuserPass);
 
-				JOptionPane.showMessageDialog(ChangePasswordController.this, "Ganti password sukses", "Pesan", JOptionPane.INFORMATION_MESSAGE);
-				logout();
+				dispose();
+				JOptionPane.showMessageDialog(ChangePasswordController.this, "Ganti password sukses.\nSilahkan logout dan login kembali!", "Pesan", JOptionPane.INFORMATION_MESSAGE);
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
@@ -70,8 +66,7 @@ public class ChangePasswordController extends ChangePasswordModel implements IPa
 		}
 	}
 
-	public void logout() {
-		dispose();
-		JOptionPane.showMessageDialog(ChangePasswordController.this, "Silahkan logout dan\nlogin kembali", "Pesan", JOptionPane.INFORMATION_MESSAGE);
+	public void load() {
+		idLogin = Login.getIdLogin();
 	}
 }

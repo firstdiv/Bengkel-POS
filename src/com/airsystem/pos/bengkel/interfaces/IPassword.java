@@ -8,6 +8,4 @@ import java.awt.event.ActionEvent;
 public interface IPassword extends IBase {
 
 	public void change(ActionEvent evt);
-
-	public void logout();
 }

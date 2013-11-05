@@ -10,13 +10,14 @@ import org.apache.log4j.Logger;
 import com.airsystem.pos.bengkel.component.TableFrame;
 import com.airsystem.pos.bengkel.entity.User;
 import com.airsystem.pos.bengkel.interfaces.IMasterLookup;
+import com.airsystem.pos.bengkel.interfaces.ISystem;
 import com.airsystem.pos.bengkel.model.UserManagementDialogModel;
 import com.airsystem.pos.bengkel.service.UserServices;
 
 /**
  * @author Budi Oktaviyan
  */
-public class UserManagementDialogController extends UserManagementDialogModel implements IMasterLookup {
+public class UserManagementDialogController extends UserManagementDialogModel implements IMasterLookup, ISystem {
 	private static final Logger LOG = Logger.getLogger(UserManagementDialogController.class.getSimpleName());
 
 	private String search;
@@ -41,28 +42,6 @@ public class UserManagementDialogController extends UserManagementDialogModel im
 	public void reset() {
 		searchField.setText("");
 		searchCombo.requestFocus();
-	}
-
-	public void load() {
-		try {
-			List<User> users = userServices.select();
-			for (User user : users) {
-				Vector<String> vector = new Vector<String>();
-				vector.add(user.getNama());
-				vector.add(user.getUsername());
-				vector.add(user.getRole().getRole());
-				vector.add(String.valueOf(user.getId()));
-				tableModel.addRow(vector);
-			}
-			tableData.setModel(tableModel);
-
-			this.setResizable(false);
-			this.setVisible(true);
-		} catch (Exception e) {
-			this.setVisible(false);
-			LOG.error(e.getMessage(), e);
-			JOptionPane.showMessageDialog(UserManagementDialogController.this, "Load data gagal!", "Pesan", JOptionPane.ERROR_MESSAGE);
-		}
 	}
 
 	public void category() {
@@ -100,6 +79,28 @@ public class UserManagementDialogController extends UserManagementDialogModel im
 				LOG.error(e.getMessage(), e);
 				JOptionPane.showMessageDialog(UserManagementDialogController.this, "Load data gagal!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			}
+		}
+	}
+
+	public void load() {
+		try {
+			List<User> users = userServices.select();
+			for (User user : users) {
+				Vector<String> vector = new Vector<String>();
+				vector.add(user.getNama());
+				vector.add(user.getUsername());
+				vector.add(user.getRole().getRole());
+				vector.add(String.valueOf(user.getId()));
+				tableModel.addRow(vector);
+			}
+			tableData.setModel(tableModel);
+
+			this.setResizable(false);
+			this.setVisible(true);
+		} catch (Exception e) {
+			this.setVisible(false);
+			LOG.error(e.getMessage(), e);
+			JOptionPane.showMessageDialog(UserManagementDialogController.this, "Load data gagal!", "Pesan", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }

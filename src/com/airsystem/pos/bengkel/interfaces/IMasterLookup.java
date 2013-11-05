@@ -5,7 +5,5 @@ package com.airsystem.pos.bengkel.interfaces;
  */
 public interface IMasterLookup extends IMasterBase {
 
-	public void load();
-
 	public void category();
 }
