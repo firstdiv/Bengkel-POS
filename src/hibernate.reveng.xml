@@ -6,4 +6,6 @@
 	<schema-selection match-catalog="bengkel" />
 	<table-filter match-name="tbl_user" />
 	<table-filter match-name="tbl_role" />
+	<table-filter match-name="tbl_karyawan" />
+	<table-filter match-name="tbl_kendaraan" />
 </hibernate-reverse-engineering>

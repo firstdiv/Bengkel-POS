@@ -18,6 +18,8 @@ import com.airsystem.pos.bengkel.interfaces.IMenu;
 import com.airsystem.pos.bengkel.model.MenuModel;
 import com.airsystem.pos.bengkel.view.ChangePassword;
 import com.airsystem.pos.bengkel.view.Login;
+import com.airsystem.pos.bengkel.view.MasterEmployee;
+import com.airsystem.pos.bengkel.view.MasterVehicle;
 import com.airsystem.pos.bengkel.view.UserManagement;
 
 /**
@@ -185,7 +187,25 @@ public class MenuController extends MenuModel implements IMenu {
 	}
 
 	public void openMasterEmployee(ActionEvent evt) {
-		// TODO Implement later
+		if (!desktopPane.isAncestorOf(formMasterEmployee)) {
+			formMasterEmployee = new MasterEmployee(this);
+			desktopPane.add(formMasterEmployee);
+
+			try {
+				formMasterEmployee.setVisible(true);
+				formMasterEmployee.setSelected(true);
+			} catch (Exception e) {
+				LOG.error(e.getMessage(), e);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
+			}
+		} else {
+			try {
+				formMasterEmployee.setSelected(true);
+			} catch (Exception e) {
+				LOG.error(e.getMessage(), e);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
+			}
+		}
 	}
 
 	public void openMasterBilling(ActionEvent evt) {
@@ -193,7 +213,25 @@ public class MenuController extends MenuModel implements IMenu {
 	}
 
 	public void openMasterVehicle(ActionEvent evt) {
-		// TODO Implement later
+		if (!desktopPane.isAncestorOf(formMasterVehicle)) {
+			formMasterVehicle = new MasterVehicle(this);
+			desktopPane.add(formMasterVehicle);
+
+			try {
+				formMasterVehicle.setVisible(true);
+				formMasterVehicle.setSelected(true);
+			} catch (Exception e) {
+				LOG.error(e.getMessage(), e);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
+			}
+		} else {
+			try {
+				formMasterVehicle.setSelected(true);
+			} catch (Exception e) {
+				LOG.error(e.getMessage(), e);
+				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
+			}
+		}
 	}
 
 	public void openMasterCustomer(ActionEvent evt) {

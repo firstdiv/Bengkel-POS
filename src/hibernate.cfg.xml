@@ -13,11 +13,13 @@
 		<property name="hibernate.connection.autocommit">true</property>
 
 		<!-- Hibernate Configuration Optional -->
-		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<property name="hibernate.show_sql">true</property>
 
 		<!-- Bean Mapping -->
 		<mapping class="com.airsystem.pos.bengkel.entity.User"></mapping>
 		<mapping class="com.airsystem.pos.bengkel.entity.Role"></mapping>
+		<mapping class="com.airsystem.pos.bengkel.entity.Karyawan"></mapping>
+		<mapping class="com.airsystem.pos.bengkel.entity.Kendaraan"></mapping>
 	</session-factory>
 </hibernate-configuration>
