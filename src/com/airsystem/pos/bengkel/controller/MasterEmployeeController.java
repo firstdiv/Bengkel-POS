@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 
 import com.airsystem.pos.bengkel.interfaces.IMaster;
 import com.airsystem.pos.bengkel.model.MasterEmployeeModel;
-import com.airsystem.pos.bengkel.service.KaryawanServices;
 import com.airsystem.pos.bengkel.view.MasterEmployeeDialog;
 
 /**
@@ -15,9 +14,10 @@ import com.airsystem.pos.bengkel.view.MasterEmployeeDialog;
 public class MasterEmployeeController extends MasterEmployeeModel implements IMaster {
 	private static final Logger LOG = Logger.getLogger(MasterEmployeeController.class.getSimpleName());
 
-	private String nama, gaji, uangMakan, id;
+	// FIXME Implement this later
+	// private String nama, gaji, uangMakan, id;
 
-	private KaryawanServices karyawanServices = new KaryawanServices();
+	// private KaryawanServices karyawanServices = new KaryawanServices();
 
 	public MasterEmployeeController() {
 		super();
@@ -34,10 +34,10 @@ public class MasterEmployeeController extends MasterEmployeeModel implements IMa
 	}
 
 	public void get() {
-		nama = namaField.getText();
-		gaji = gajiField.getText();
-		uangMakan = uangmakanField.getText();
-		id = idField.getText();
+//		nama = namaField.getText();
+//		gaji = gajiField.getText();
+//		uangMakan = uangmakanField.getText();
+//		id = idField.getText();
 	}
 
 	public void reset() {

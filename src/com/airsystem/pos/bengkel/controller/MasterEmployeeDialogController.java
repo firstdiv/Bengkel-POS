@@ -8,7 +8,6 @@ import com.airsystem.pos.bengkel.component.TableFrame;
 import com.airsystem.pos.bengkel.interfaces.IMasterLookup;
 import com.airsystem.pos.bengkel.interfaces.ISystem;
 import com.airsystem.pos.bengkel.model.MasterEmployeeDialogModel;
-import com.airsystem.pos.bengkel.service.KaryawanServices;
 
 /**
  * @author Budi Oktaviyan
@@ -16,9 +15,10 @@ import com.airsystem.pos.bengkel.service.KaryawanServices;
 public class MasterEmployeeDialogController extends MasterEmployeeDialogModel implements IMasterLookup, ISystem {
 	private static final Logger LOG = Logger.getLogger(MasterEmployeeDialogController.class.getSimpleName());
 
-	private String search;
+	// TODO Implement later
+	// private String search;
 
-	private KaryawanServices karyawanServices = new KaryawanServices();
+	// private KaryawanServices karyawanServices = new KaryawanServices();
 
 	public MasterEmployeeDialogController() {
 		super();
