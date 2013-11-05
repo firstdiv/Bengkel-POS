@@ -19,7 +19,7 @@ public class DesktopFrame extends JInternalFrame {
 
 	protected MenuController menuController;
 
-	protected JDialog dialogUserManagement;
+	protected JDialog dialogUserManagement, dialogMasterEmployee, dialogMasterVehicle;
 
 	public void setMaximum(boolean b) {
 		isMaximum = b;
