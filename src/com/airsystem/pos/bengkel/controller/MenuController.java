@@ -49,6 +49,7 @@ public class MenuController extends MenuModel implements IMenu {
 	public void setup(boolean authority) {
 		itemUserManagement.setVisible(authority);
 		itemChangePassword.setVisible(!authority);
+		masterMenu.setVisible(authority);
 	}
 
 	public void timer() {
@@ -181,6 +182,38 @@ public class MenuController extends MenuModel implements IMenu {
 				JOptionPane.showMessageDialog(MenuController.this, "Gagal buka form!", "Pesan", JOptionPane.ERROR_MESSAGE);
 			}
 		}
+	}
+
+	public void openMasterEmployee(ActionEvent evt) {
+		// TODO Implement later
+	}
+
+	public void openMasterBilling(ActionEvent evt) {
+		// TODO Implement later
+	}
+
+	public void openMasterVehicle(ActionEvent evt) {
+		// TODO Implement later
+	}
+
+	public void openMasterCustomer(ActionEvent evt) {
+		// TODO Implement later
+	}
+
+	public void openMasterSparepart(ActionEvent evt) {
+		// TODO Implement later
+	}
+
+	public void openMasterJasa(ActionEvent evt) {
+		// TODO Implement later
+	}
+
+	public void openSparepartOrder(ActionEvent evt) {
+		// TODO Implement later
+	}
+
+	public void openJasaOrder(ActionEvent evt) {
+		// TODO Implement later
 	}
 
 	private boolean askExit() {
