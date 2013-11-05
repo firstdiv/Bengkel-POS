@@ -2,8 +2,6 @@ package com.airsystem.pos.bengkel.controller;
 
 import java.awt.event.ActionEvent;
 
-import org.apache.log4j.Logger;
-
 import com.airsystem.pos.bengkel.interfaces.IMaster;
 import com.airsystem.pos.bengkel.model.VehicleDataModel;
 
@@ -12,8 +10,8 @@ import com.airsystem.pos.bengkel.model.VehicleDataModel;
  */
 public class VehicleDataController extends VehicleDataModel implements IMaster {
 	
-	private static final long 	serialVersionUID = 2457857808747237070L;
-	private static final Logger LOG = Logger.getLogger(VehicleDataController.class.getSimpleName());
+	// TODO Implement later
+	// private static final Logger LOG = Logger.getLogger(VehicleDataController.class.getSimpleName());
 	
 	public VehicleDataController() {
 		super();
