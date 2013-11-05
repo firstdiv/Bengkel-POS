@@ -7,4 +7,5 @@
 	<table-filter match-name="tbl_user" />
 	<table-filter match-name="tbl_role" />
 	<table-filter match-name="tbl_karyawan" />
+	<table-filter match-name="tbl_vehicle" />
 </hibernate-reverse-engineering>
